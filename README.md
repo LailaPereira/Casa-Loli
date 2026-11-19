@@ -33,6 +33,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 O projeto foi desenvolvido como atividade acadêmica, com foco na aplicação prática de conceitos de desenvolvimento web, design de interfaces e experiência do usuário (UX/UI).
 
+- [Acesse o projeto finalizado, online](https://lailapereira.github.io/Casa-Loli/)
+
 ## :memo: Licença
 
 Esse projeto está sob a licença MIT.
