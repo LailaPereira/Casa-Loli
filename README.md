@@ -35,6 +35,16 @@ O projeto foi desenvolvido como atividade acadêmica, com foco na aplicação pr
 
 - [Acesse o projeto finalizado, online](https://lailapereira.github.io/Casa-Loli/)
 
+## 🚧 Próximas etapas
+
+- [ ] Implementar o cadastro e funcionamento da newsletter.
+- [ ] Implementar funcionalidades do perfil do usuário.
+- [ ] Desenvolver sistema de login.
+- [ ] Desenvolver sistema de criação de conta (cadastro).
+- [ ] Implementar validações dos formulários.
+- [ ] Aprimorar funcionalidades e interações do site.
+- [ ] Realizar testes e ajustes finais de responsividade.
+
 ## :memo: Licença
 
 Esse projeto está sob a licença MIT.
