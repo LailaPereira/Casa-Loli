@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet"/>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Casa Lolí</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div class="announcement">BEM-VINDA Á CASA LOLÍ <span>·</span> ESTILO QUE REFLETE SUA ESSÊNCIA </div> 
+        <header>
+            <div class="header-content">
+                <h1>Casa Lolí</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#Home">HOME</a></li>
+                        <li><a href="#collection">COLEÇÃO</a></li>
+                        <li><a href="#about">SOBRE</a></li>
+                        <li><a href="#newsletter">NEWSLETTER</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-actions">
+
+                <button class="profile-button" id="open-profile" aria-label="Perfil">
+                    ♙
+                </button>
+
+                <button class="cart-button" id="open-cart" aria-label="Abrir sacola">
+                    Sacola
+                    <span id="cart-count">0</span>
+                </button>
+
+            </div>
+
+        </header>
+        
+        <main>
+            <section class="hero" id="inicio">
+                <div class="hero-copy">
+                    <p class="eyebrow">ESSENCIALMENTE VOCÊ</p>
+                    <h1>
+                        vista-se de <em>você.</em>
+                    </h1>
+                    <p class="hero-description">
+                        Peças escolhidas com carinho para acompanhar sua beleza,
+                        sua personalidade e cada momento especial.
+                    </p>
+                    <a class="button button-dark" href="#collection"> EXPLORAR COLEÇÃO <span class="arrow">→</span>
+                    </a>
+                </div>
+                <div class="hero-image" role="img" aria-label="Imagem de destaque"> 
+                    <img src="./Assets/fundodecapa.jpeg" class="hero-slide active" alt="Primeira foto da coleção">
+                    <img src="./Assets/fundodecapa2.jpeg" class="hero-slide" alt="Segunda foto da coleção">
+                    <img src="./Assets/fundodecapa3.jpeg" class="hero-slide" alt="Terceira foto da coleção">
+
+                    <div class="hero-image-label">NOVA COLEÇÃO <br>
+                        <strong>Leveza e elegância</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="benefits">
+                <div class="benefit">
+                    <span>✧</span>
+                    <div>
+                        <h3>CURADORIA ESPECIAL</h3>
+                        <p>Peças escolhidas com carinho</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <span>♡</span>
+                    <div>
+                        <h3>FEITO PARA VOCÊ</h3>
+                        <p>Estilo e personalidade</p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <span>✦</span>
+                    <div>
+                        <h3>ESTILO ATEMPORAL</h3>
+                        <p>Elegância em cada detalhe</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="home">
+                <h2>Bem-vindo à Casa Lolí</h2>
+                <p>Peças escolhidas com carinho para acompanhar sua beleza, sua personalidade e cada momento especial.</p>
+            </section>
+
+            <div class="logo-watermark">
+                <img src="Assets/logosemfundo.png" alt="logo da casa loli">
+            </div>
+
+            <section id="about">
+                <h2>Sobre Nós</h2>
+                <p>A Casa Lolí nasceu para celebrar a beleza e a essência feminina. <br>
+                    Somos apaixonados por moda e acreditamos que vestir-se bem é uma forma de expressar sua personalidade, confiança e elegância. <br> 
+                    Nossa missão é fazer você se sentir linda em todos os momentos! 🤎</p>
+            </section>
+
+            <section class="collection "id="collection">
+                <div class="section-heading">
+                    <p class="eyebrow">ESCOLHIDOS PARA VOCÊ</p>
+                    <h2>Nossa Coleção</h2>
+                    <p>Peças que traduzem elegância, conforto e personalidade.</p>
+                </div>
+                <!-- FILTROS E BUSCA -->
+                 
+                <div class="category-filters">
+                    <button class="filter-btn active" data-filter="all">Todas</button>
+                    <button class="filter-btn" data-filter="vestidos">Vestidos</button>
+                    <button class="filter-btn" data-filter="blusas">Blusas</button>
+                    <button class="filter-btn" data-filter="body">Body</button>
+                    <button class="filter-btn" data-filter="jaqueta">Jaqueta</button>
+                    <button class="filter-btn" data-filter="conjuntos">Conjuntos</button>
+                    <button class="filter-btn" data-filter="calças">Calças</button>
+                    <button class="filter-btn" data-filter="saias">Saias</button>
+                    <button class="filter-btn" data-filter="bermudas">Bermudas</button>
+                    <button class="filter-btn" data-filter="academia">Academia</button>
+                    <button class="filter-btn" data-filter="saída de banho">Saída de Banho</button>
+                    <button class="filter-btn" data-filter="biquínis">Biquínis</button>
+                    <button class="filter-btn" data-filter="maiôs">Maiôs</button>
+                </div>
+
+
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input
+                        type="search"
+                        id="product-search"
+                        placeholder="Buscar produto...">
+                </div>
+
+                <p class="product-count" id="product-count">
+                    Produtos encontrados
+                </p>
+
+                <div class="product-grid">
+                    <!-- PRODUTO 1 -->
+                    <article class="product-card" data-category="vestidos" data-name="Vestido Elegance">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto1.jpeg" alt="Vestido feminino amarelo">
+                            <span class="product-tag">DESTAQUE</span>
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">VESTIDOS</p>
+                            <h3>Vestido Elegance</h3>
+                            <p class="product-price">R$ 189,90</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Vestido Elegance"
+                                    data-price="189,90"
+                                    data-image="Assets/produtos/produto1.1.jpeg"
+                                    data-description="Um vestido elegante, delicado e perfeito para ocasiões especiais."
+                                    data-category="VESTIDOS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Vestido Elegance" data-price="189.90">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- PRODUTO 2 -->
+                     <article class="product-card" data-category="vestidos" data-name="Vestido Serena">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto2.jpeg" alt="Vestido feminino elegante">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">VESTIDOS</p>
+                            <h3>Vestido Serena</h3>
+                            <p class="product-price">R$ 110,90</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Vestido Serena"
+                                    data-price="110,90"
+                                    data-image="Assets/produtos/produto2.1.jpeg"
+                                    data-description="Um vestido elegante, delicado e perfeito para ocasiões especiais."
+                                    data-category="VESTIDOS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Vestido Serena" data-price="110.90">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 3 -->
+                     <article class="product-card" data-category="vestidos" data-name="Vestido Luna">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto3.jpeg" alt="Vestido feminino elegante">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">VESTIDOS</p>
+                            <h3>Vestido Luna</h3>
+                            <p class="product-price">R$ 219,90</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Vestido Luna"
+                                    data-price="219,90"
+                                    data-image="Assets/produtos/produto3.1.jpeg"
+                                    data-description="Um vestido elegante, delicado e perfeito para ocasiões especiais."
+                                    data-category="VESTIDOS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Vestido Luna" data-price="219.90">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     </article>
+                     <!-- PRODUTO 4 -->
+                     <article class="product-card" data-category="conjuntos" data-name="Conjunto Lana">
+                        <div class="product-image">
+                            <img src="Assets/fundodecapa.jpeg" alt="Conjunto feminino elegante">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">CONJUNTOS</p>
+                            <h3>Conjunto Lana</h3>
+                            <p class="product-price">R$ 319,90</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Conjunto Luna"
+                                    data-price="319,90"
+                                    data-image="Assets/fundodecapa1.jpeg"
+                                    data-description="Um conjunto elegante, versátil e cheio de charme, perfeito para compor looks sofisticados em qualquer ocasião."
+                                    data-category="CONJUNTOS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Conjunto Lana" data-price="319.90">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 5 -->
+                     <article class="product-card" data-category="vestidos" data-name="Vestido Laís">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto4.jpeg" alt="Vestido longo verde feminino elegante">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">VESTIDOS</p>
+                            <h3>Vestido Laís</h3>
+                            <p class="product-price">R$ 369,90</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Vestido Laís"
+                                    data-price="369,90"
+                                    data-image="Assets/produtos/produto4.1.jpeg"
+                                    data-description="Um vestido elegante, delicado e perfeito para ocasiões especiais."
+                                    data-category="VESTIDOS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Vestido Laís" data-price="369.90">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 6 -->
+                     <article class="product-card" data-category="body" data-name="Body Larissa">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto5.jpeg" alt="Body amarelo manteiga de manga comprida">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BODY</p>
+                            <h3>Body Larissa</h3>
+                            <p class="product-price">R$ 129,90</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Body Larissa"
+                                    data-price="129,90"
+                                    data-image="Assets/produtos/produto5.1.jpeg"
+                                    data-description="Um body elegante, delicado e perfeito para ocasiões especiais."
+                                    data-category="BODY">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Body Larissa" data-price="129.90">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 7 -->
+                     <article class="product-card" data-category="blusas" data-name="Blusa Laura">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto6.jpeg" alt="Blusa feminina de alçinha aramelo manteiga">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BLUSAS</p>
+                            <h3>Blusa Laura</h3>
+                            <p class="product-price">R$ 99,90</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Blusa Laura"
+                                    data-price="99,90"
+                                    data-image="Assets/produtos/produto6.1.jpeg"
+                                    data-description="Uma blusa elegante, delicada e perfeita para ocasiões especiais."
+                                    data-category="BLUSAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Blusa Laura" data-price="99.90">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 8 -->
+                     <article class="product-card" data-category="vestidos" data-name="Vestido Raissa">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto7.jpeg" alt="Vestido feminino estampado branco e azul">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">VESTIDOS</p>
+                            <h3>Vestido Raissa</h3>
+                            <p class="product-price">R$ 150,00</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Vestido Raissa"
+                                    data-price="150,00"
+                                    data-image="Assets/produtos/produto7.1.jpeg"
+                                    data-description="Um vestido elegante, delicado e perfeito para ocasiões especiais."
+                                    data-category="VESTIDOS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Vestido Raissa" data-price="150.00">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 9 -->
+                     <article class="product-card" data-category="vestidos" data-name="Vestido Maria">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto8.jpeg" alt="Vestido feminino longo azul">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">VESTIDOS</p>
+                            <h3>Vestido Maria</h3>
+                            <p class="product-price">R$ 189,00</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Vestido Maria"
+                                    data-price="189,00"
+                                    data-image="Assets/produtos/produto8.1.jpeg"
+                                    data-description="Um vestido elegante, delicado e perfeito para ocasiões especiais."
+                                    data-category="VESTIDOS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Vestido Maria" data-price="189.00">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 10 -->
+                     <article class="product-card" data-category="conjuntos" data-name="Conjunto Anita">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto9.jpeg" alt="Conjunto feminino vermelho">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">CONJUNTOS</p>
+                            <h3>Conjunto Anita</h3>
+                            <p class="product-price">R$ 239,00</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Conjunto Anita"
+                                    data-price="239,00"
+                                    data-image="Assets/produtos/produto9.1.jpeg"
+                                    data-description="Um conjunto elegante, delicado e perfeito para ocasiões especiais."
+                                    data-category="CONJUNTOS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Conjunto Anita" data-price="239.00">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 11 -->
+                     <article class="product-card" data-category="blusas" data-name="Blusa Rosa">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto10.jpeg" alt="Blusa feminina marrom com bolinhas brancas">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BLUSAS</p>
+                            <h3>Blusa Rosa</h3>
+                            <p class="product-price">R$69,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Blusa Rosa"
+                                    data-price="69,99"
+                                    data-image="Assets/produtos/produto10.1.jpeg"
+                                    data-description="Uma blusa elegante, delicada e perfeita para ocasiões especiais."
+                                    data-category="BLUSAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Blusa Rosa" data-price="69.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 12 -->
+                     <article class="product-card" data-category="saída de banho" data-name="Saída de banho elegante branca">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto11.jpeg" alt="Saída de banho feminina branca elegante">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">SAÍDA DE BANHO</p>
+                            <h3>Saída Carla</h3>
+                            <p class="product-price">R$180,90</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Saída Carla"
+                                    data-price="180,90"
+                                    data-image="Assets/produtos/produto11.1.jpeg"
+                                    data-description="Uma saída de banho elegante, delicada e perfeita para ocasiões especiais."
+                                    data-category="SAÍDA DE BANHO">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Saída Carla" data-price="180.90">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 13 -->
+                     <article class="product-card" data-category="biquínis" data-name="Biquíni Colorido">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto12.jpeg" alt="Biquíni colorido feminino">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BIQUÍNIS</p>
+                            <h3>Biquíni Íris</h3>
+                            <p class="product-price">R$99,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Biquíni Íris"
+                                    data-price="99,99"
+                                    data-image="Assets/produtos/produto12.1.jpeg"
+                                    data-description="Um biquíni colorido, delicado e perfeito para ocasiões especiais."
+                                    data-category="BIQUÍNIS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Biquíni Íris" data-price="99.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 14 -->
+                     <article class="product-card" data-category="blusas" data-name="Blusa preta">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto13.jpeg" alt="Blusa preta">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BLUSAS</p>
+                            <h3>Blusa Júlia</h3>
+                            <p class="product-price">R$129,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Blusa Júlia"
+                                    data-price="129,99"
+                                    data-image="Assets/produtos/produto13.1.jpeg"
+                                    data-description="Uma blusa elegante, delicada e perfeita para ocasiões especiais."
+                                    data-category="BLUSAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Blusa Júlia" data-price="129.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 15 -->
+                     <article class="product-card" data-category="body" data-name="Body preto">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto14.jpeg" alt="Body preto">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BODY</p>
+                            <h3>Body Amelia</h3>
+                            <p class="product-price">R$139,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Body Amelia"
+                                    data-price="139,99"
+                                    data-image="Assets/produtos/produto14.1.jpeg"
+                                    data-description="Um body elegante, delicado e perfeito para ocasiões especiais."
+                                    data-category="BODY">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Body Amelia" data-price="139.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 16 -->
+                     <article class="product-card" data-category="blusas" data-name="Blusa elegante branca">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto15.jpeg" alt="Blusa elegante branca">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BLUSAS</p>
+                            <h3>Blusa Branca</h3>
+                            <p class="product-price">R$99,00</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Blusa Branca"
+                                    data-price="99,00"
+                                    data-image="Assets/produtos/produto15.1.jpeg"
+                                    data-description="Uma blusa elegante, delicada e perfeita para ocasiões especiais."
+                                    data-category="BLUSAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Blusa Branca" data-price="99.00">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 17 -->
+                     <article class="product-card" data-category="calças" data-name="Calça jeans feminina azul">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto16.jpeg" alt="Calça jeans feminina azul">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">CALÇAS</p>
+                            <h3>Calça Jeans Azul</h3>
+                            <p class="product-price">R$199,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Calça Jeans Azul"
+                                    data-price="199,99"
+                                    data-image="Assets/produtos/produto16.1.jpeg"
+                                    data-description="Uma calça jeans feminina azul, elegante e perfeita para ocasiões especiais."
+                                    data-category="CALÇAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Calça Jeans Azul" data-price="199.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 18 -->
+                     <article class="product-card" data-category="bermudas" data-name="Bermuda feminina jeans azul claro">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto17.jpeg" alt="Bermuda feminina jeans azul claro">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BERMUDAS</p>
+                            <h3>Bermuda Cristalina</h3>
+                            <p class="product-price">R$120,90</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Bermuda Feminina Jeans Azul Claro"
+                                    data-price="120,90"
+                                    data-image="Assets/produtos/produto17.1.jpeg"
+                                    data-description="Uma bermuda jeans feminina azul claro, elegante e perfeita para ocasiões especiais."
+                                    data-category="BERMUDAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Bermuda Cristalina" data-price="120.90">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 19 -->
+                     <article class="product-card" data-category="bermudas" data-name="Bermuda feminina jeans azul medio">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto18.jpeg" alt="Bermuda feminina jeans azul medio">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BERMUDAS</p>
+                            <h3>Bermuda Cristal</h3>
+                            <p class="product-price">R$99,90</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Bermuda Feminina Jeans Azul Médio"
+                                    data-price="99,90"
+                                    data-image="Assets/produtos/produto18.1.jpeg"
+                                    data-description="Uma bermuda jeans feminina azul médio, elegante e perfeita para ocasiões especiais."
+                                    data-category="BERMUDAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Bermuda Cristal" data-price="99.90">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 20 -->
+                     <article class="product-card" data-category="blusas" data-name="Blusa Oslo">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto19.jpeg" alt="Blusa Oslo">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BLUSAS</p>
+                            <h3>Blusa Oslo</h3>
+                            <p class="product-price">R$99,90</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Blusa Oslo"
+                                    data-price="99,90"
+                                    data-image="Assets/produtos/produto19.1.jpeg"
+                                    data-description="Uma blusa oslo, elegante e perfeita para ocasiões especiais."
+                                    data-category="BLUSAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Blusa Oslo" data-price="99.90">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                      <!-- PRODUTO 21 -->
+                     <article class="product-card" data-category="bermudas" data-name="Bermuda azul médio">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto20.jpeg" alt="Bermuda azul médio">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BERMUDAS</p>
+                            <h3>Bermuda azul médio</h3>
+                            <p class="product-price">R$120,90</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Bermuda azul médio"
+                                    data-price="120,90"
+                                    data-image="Assets/produtos/produto20.1.jpeg"
+                                    data-description="Uma bermuda azul médio, elegante e perfeita para ocasiões especiais."
+                                    data-category="BERMUDAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Bermuda azul médio" data-price="120.90">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                      <!-- PRODUTO 22 -->
+                     <article class="product-card" data-category="blusas" data-name="Blusa branca">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto21.jpeg" alt="Blusa branca">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BLUSAS</p>
+                            <h3>Blusa Ágata</h3>
+                            <p class="product-price">R$69,90</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Blusa Ágata"
+                                    data-price="69,90"
+                                    data-image="Assets/produtos/produto21.1.jpeg"
+                                    data-description="Uma blusa ágata, elegante e perfeita para ocasiões especiais."
+                                    data-category="BLUSAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Blusa branca" data-price="69.90">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                      <!-- PRODUTO 23 -->
+                     <article class="product-card" data-category="bermudas" data-name="Bermuda com bolinha">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto22.jpeg" alt="Bermuda branca com bolinhas pretas">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BERMUDAS</p>
+                            <h3>Bermuda Felícia</h3>
+                            <p class="product-price">R$89,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Bermuda Felícia"
+                                    data-price="89,99"
+                                    data-image="Assets/produtos/produto22.1.jpeg"
+                                    data-description="Uma bermuda felícia, elegante e perfeita para ocasiões especiais."
+                                    data-category="BERMUDAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Bermuda com bolinha" data-price="89.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 24 -->
+                     <article class="product-card" data-category="conjuntos" data-name="conjunto de bolinha">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto23.jpeg" alt="conjunto branco com bolinhas pretas">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">CONJUNTOS</p>
+                            <h3>Conjunto Felícia</h3>
+                            <p class="product-price">R$569,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Conjunto Felícia"
+                                    data-price="569,99"
+                                    data-image="Assets/produtos/produto23.1.jpeg"
+                                    data-description="Uma conjunto felícia, elegante e perfeita para ocasiões especiais."
+                                    data-category="CONJUNTOS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Conjunto com bolinha" data-price="569.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 25 -->
+                     <article class="product-card" data-category="jaqueta" data-name="Jaqueta com bolinha">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto24.jpeg" alt="Jaqueta branca com bolinhas pretas">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">JAQUETA</p>
+                            <h3>Jaqueta Felícia</h3>
+                            <p class="product-price">R$230,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Jaqueta Felícia"
+                                    data-price="230,99"
+                                    data-image="Assets/produtos/produto23.1.jpeg"
+                                    data-description="Uma jaqueta felícia, elegante e perfeita para ocasiões especiais."
+                                    data-category="JAQUETAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Jaqueta com bolinha" data-price="230.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 26 -->
+                     <article class="product-card" data-category="conjuntos" data-name="Conjunto violeta">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto25.jpeg" alt="Conjunto violeta com bolinhas pretas">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">CONJUNTOS</p>
+                            <h3>Conjunto Violeta</h3>
+                            <p class="product-price">R$269,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Conjunto violeta"
+                                    data-price="269,99"
+                                    data-image="Assets/produtos/produto25.1.jpeg"
+                                    data-description="Um conjunto violeta com bolinhas pretas, elegante e perfeito para ocasiões especiais."
+                                    data-category="CONJUNTOS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Conjunto violeta" data-price="269.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 27 -->
+                     <article class="product-card" data-category="maiôs" data-name="Maiô lua">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto26.jpeg" alt="Conjunto violeta com bolinhas pretas">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">MAIÔS</p>
+                            <h3>Maiô Lua</h3>
+                            <p class="product-price">R$169,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Maiô Lua"
+                                    data-price="169,99"
+                                    data-image="Assets/produtos/produto26.1.jpeg"
+                                    data-description="Um maiô lua, elegante e perfeito para ocasiões especiais."
+                                    data-category="MAIÔS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Maiô lua" data-price="169.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 28 -->
+                     <article class="product-card" data-category="calças" data-name="Calça Estrela">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto27.jpeg" alt="Conjunto brilhosa verde">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">CALÇAS</p>
+                            <h3>Calça Estrela</h3>
+                            <p class="product-price">R$179,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Calça Estrela"
+                                    data-price="179,99"
+                                    data-image="Assets/produtos/produto27.1.jpeg"
+                                    data-description="Uma calça estrela, elegante e perfeita para ocasiões especiais."
+                                    data-category="CALÇAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Calça Estrela" data-price="179.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 29 -->
+                     <article class="product-card" data-category="vestidos" data-name="Vestido Laila">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto28.jpeg" alt="vestido femino elegante azul marinho">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">VESTIDOS</p>
+                            <h3>Vestido Laila</h3>
+                            <p class="product-price">R$789,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Vestido Laila"
+                                    data-price="789,99"
+                                    data-image="Assets/produtos/produto28.1.jpeg"
+                                    data-description="Um vestido laila, elegante e perfeito para ocasiões especiais."
+                                    data-category="VESTIDOS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Vestido Laila" data-price="789.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 30 -->
+                     <article class="product-card" data-category="vestidos" data-name="Vestido Seda">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto29.jpeg" alt="vestido femino elegante de seda preto">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">VESTIDOS</p>
+                            <h3>Vestido Seda</h3>
+                            <p class="product-price">R$589,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Vestido Seda"
+                                    data-price="589,99"
+                                    data-image="Assets/produtos/produto29.1.jpeg"
+                                    data-description="Um vestido seda, elegante e perfeito para ocasiões especiais."
+                                    data-category="VESTIDOS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Vestido Seda" data-price="589.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                      <!-- PRODUTO 31 -->
+                     <article class="product-card" data-category="blusas" data-name="Blusa Sofia">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto30.jpeg" alt="blusa feminima de seda marrom com bolinhas brancas ">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BLUSAS</p>
+                            <h3>Blusa Sofia</h3>
+                            <p class="product-price">R$59,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Blusa Sofia"
+                                    data-price="59,99"
+                                    data-image="Assets/produtos/produto30.1.jpeg"
+                                    data-description="Uma blusa sofia, elegante e perfeita para ocasiões especiais."
+                                    data-category="BLUSAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Blusa Sofia" data-price="59.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                    <!-- PRODUTO 32 -->
+                     <article class="product-card" data-category="calças" data-name="Calça Yasmin">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto31.jpeg" alt="calça social feminina ">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">CALÇAS</p>
+                            <h3>Calça Yasmin</h3>
+                            <p class="product-price">R$89,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Calça Yasmin"
+                                    data-price="89,99"
+                                    data-image="Assets/produtos/produto31.1.jpeg"
+                                    data-description="Uma calça yasmin, elegante e perfeita para ocasiões especiais."
+                                    data-category="CALÇAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Calça Yasmin" data-price="89.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 33 -->
+                     <article class="product-card" data-category="blusas" data-name="Blusa Giovana">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto32.jpeg" alt="blusa off-white feminina com bolinha marrom">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BLUSAS</p>
+                            <h3>Blusa Giovana</h3>
+                            <p class="product-price">R$89,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Blusa Giovana"
+                                    data-price="89,99"
+                                    data-image="Assets/produtos/produto32.1.jpeg"
+                                    data-description="Uma blusa giovana, elegante e perfeita para ocasiões especiais."
+                                    data-category="BLUSAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Blusa Giovana" data-price="89.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 34 -->
+                     <article class="product-card" data-category="blusas" data-name="Blusa Liz">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto33.jpeg" alt="blusa feminina listrada">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BLUSAS</p>
+                            <h3>Blusa Liz</h3>
+                            <p class="product-price">R$95,00</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Blusa Liz"
+                                    data-price="95,00"
+                                    data-image="Assets/produtos/produto33.1.jpeg"
+                                    data-description="Uma blusa liz, elegante e perfeita para ocasiões especiais."
+                                    data-category="BLUSAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Blusa Liz" data-price="95.00">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 35 -->
+                     <article class="product-card" data-category="jaquetas" data-name="Jaqueta feminina jeans azul escuro">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto34.jpeg" alt="jaqueta feminina jeans azul escuro">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">JAQUETAS</p>
+                            <h3>Jaqueta Siena</h3>
+                            <p class="product-price">R$169,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Jaqueta Siena"
+                                    data-price="169,99"
+                                    data-image="Assets/produtos/produto34.1.jpeg"
+                                    data-description="Uma jaqueta siena, elegante e perfeita para ocasiões especiais."
+                                    data-category="JAQUETAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Jaqueta Siena" data-price="169.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 36 -->
+                     <article class="product-card" data-category="body" data-name="Body feminina branco">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto35.jpeg" alt="body feminina branco">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BODY</p>
+                            <h3>Body Alícia</h3>
+                            <p class="product-price">R$99,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Body Alícia"
+                                    data-price="99,99"
+                                    data-image="Assets/produtos/produto35.1.jpeg"
+                                    data-description="Uma body alícia, elegante e perfeita para ocasiões especiais."
+                                    data-category="BODY">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Body Alícia" data-price="99.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 37 -->
+                     <article class="product-card" data-category="calças" data-name="Calça feminina listrada colorida">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto36.jpeg" alt="calça feminina listrada colorida">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">CALÇAS</p>
+                            <h3>Calça Milena</h3>
+                            <p class="product-price">R$179,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Calça Milena"
+                                    data-price="179,99"
+                                    data-image="Assets/produtos/produto36.jpeg"
+                                    data-description="Uma calça milena, elegante e perfeita para ocasiões especiais."
+                                    data-category="CALÇAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Calça Milena" data-price="179.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 38 -->
+                     <article class="product-card" data-category="calças" data-name="Calça feminina branca com bolinhas pretas">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto37.jpeg" alt="calça feminina branca com bolinhas pretas">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">CALÇAS</p>
+                            <h3>Calça Jasmin</h3>
+                            <p class="product-price">R$179,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Calça Jasmin"
+                                    data-price="179,99"
+                                    data-image="Assets/produtos/produto37.jpeg"
+                                    data-description="Uma calça jasmin, elegante e perfeita para ocasiões especiais."
+                                    data-category="CALÇAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Calça Jasmin" data-price="179.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 39 -->
+                     <article class="product-card" data-category="calças" data-name="Calça feminina jeans">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto38.jpeg" alt="calça feminina jeans">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">CALÇAS</p>
+                            <h3>Calça Amora</h3>
+                            <p class="product-price">R$189,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Calça Amora"
+                                    data-price="189,99"
+                                    data-image="Assets/produtos/produto38.1.jpeg"
+                                    data-description="Uma calça amora, elegante e perfeita para ocasiões especiais."
+                                    data-category="CALÇAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Calça Amora" data-price="189.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 40 -->
+                     <article class="product-card" data-category="blusas" data-name="Blusa feminina básica branca">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto39.jpeg" alt="blusa feminina básica branca">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BLUSAS</p>
+                            <h3>Blusa Básica Branca</h3>
+                            <p class="product-price">R$69,00</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Blusa Básica Branca"
+                                    data-price="69,00"
+                                    data-image="Assets/produtos/produto39.1.jpeg"
+                                    data-description="Uma blusa básica branca, elegante e perfeita para ocasiões especiais."
+                                    data-category="BLUSAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Blusa Básica Branca" data-price="69.00">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 41 -->
+                     <article class="product-card" data-category="saias" data-name="Saia short feminina marrom">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto40.jpeg" alt="saia short feminina marrom">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">SAIAS</p>
+                            <h3>Saia Short Gisele</h3>
+                            <p class="product-price">R$89,00</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Saia Short Gisele"
+                                    data-price="89,00"
+                                    data-image="Assets/produtos/produto40.1.jpeg"
+                                    data-description="Uma saia short feminina marrom, elegante e perfeita para ocasiões especiais."
+                                    data-category="SAIAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Saia Short Gisele" data-price="89.00">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                      <!-- PRODUTO 42 -->
+                     <article class="product-card" data-category="blusas" data-name="Blusa elegante feminina">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto41.jpeg" alt="blusa elegante feminina">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BLUSAS</p>
+                            <h3>Blusa Eduarda</h3>
+                            <p class="product-price">R$89,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Blusa Eduarda"
+                                    data-price="89,99"
+                                    data-image="Assets/produtos/produto41.1.jpeg"
+                                    data-description="Uma blusa elegante feminina, perfeita para ocasiões especiais."
+                                    data-category="BLUSAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Blusa Eduarda" data-price="89.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                      <!-- PRODUTO 43 -->
+                     <article class="product-card" data-category="calças" data-name="Calça elegante feminina">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto42.jpeg" alt="calça elegante feminina">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">CALÇAS</p>
+                            <h3>Calça Helena</h3>
+                            <p class="product-price">R$299,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Calça Helena"
+                                    data-price="299,99"
+                                    data-image="Assets/produtos/produto42.1.jpeg"
+                                    data-description="Uma calça elegante feminina, perfeita para ocasiões especiais."
+                                    data-category="CALÇAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Calça Helena" data-price="299.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 44 -->
+                     <article class="product-card" data-category="vestidos" data-name="Vestido feminino estampado">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto43.jpeg" alt="vestido feminino estampado">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">VESTIDOS</p>
+                            <h3>Vestido Rayssa</h3>
+                            <p class="product-price">R$129,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Vestido Rayssa"
+                                    data-price="129,99"
+                                    data-image="Assets/produtos/produto43.1.jpeg"
+                                    data-description="Um vestido elegante feminino, perfeito para ocasiões especiais."
+                                    data-category="VESTIDOS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Vestido Rayssa" data-price="129.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 45 -->
+                     <article class="product-card" data-category="vestidos" data-name="Vestido feminino estampado manga longa">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto44.jpeg" alt="vestido feminino estampado manga longa">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">VESTIDOS</p>
+                            <h3>Vestido Amalfi</h3>
+                            <p class="product-price">R$149,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Vestido Amalfi"
+                                    data-price="149,99"
+                                    data-image="Assets/produtos/produto44.jpeg"
+                                    data-description="Um vestido feminino, perfeito para ocasiões especiais."
+                                    data-category="VESTIDOS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Vestido Amalfi" data-price="149.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 46 -->
+                     <article class="product-card" data-category="calças" data-name="Calça branca feminina">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto45.jpeg" alt="calça branca feminina">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">CALÇAS</p>
+                            <h3>Calça Renata</h3>
+                            <p class="product-price">R$169,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Calça Renata"
+                                    data-price="169,99"
+                                    data-image="Assets/produtos/produto45.1.jpeg"
+                                    data-description="Uma calça branca feminina, perfeita para ocasiões especiais."
+                                    data-category="CALÇAS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Calça Renata" data-price="169.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 47 -->
+                     <article class="product-card" data-category="saída de banho" data-name="Saída de banho feminina colorida">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto46.1.jpeg" alt="saída de banho feminina colorida">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">SAÍDA DE BANHO</p>
+                            <h3>Saída Manuela</h3>
+                            <p class="product-price">R$139,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Saída Manuela"
+                                    data-price="139,99"
+                                    data-image="Assets/produtos/produto46.jpeg"
+                                    data-description="Uma saída de banho Manuela, perfeita para ocasiões especiais."
+                                    data-category="SAÍDA DE BANHO">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Saída Manuela" data-price="139.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 48 -->
+                     <article class="product-card" data-category="saída de banho" data-name="Saída de banho feminina estampada">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto47.jpeg" alt="saída de banho feminina estampada">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">SAÍDA DE BANHO</p>
+                            <h3>Saída Georgia</h3>
+                            <p class="product-price">R$139,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Saída Georgia"
+                                    data-price="139,99"
+                                    data-image="Assets/produtos/produto47.1.jpeg"
+                                    data-description="Uma saída de banho Georgia, perfeita para ocasiões especiais."
+                                    data-category="SAÍDA DE BANHO">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Saída Georgia" data-price="139.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 49 -->
+                     <article class="product-card" data-category="saída de banho" data-name="Saída de banho feminina crochê">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto48.jpeg" alt="saída de banho feminina crochê">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">SAÍDA DE BANHO</p>
+                            <h3>Saída Luana</h3>
+                            <p class="product-price">R$169,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Saída Luana"
+                                    data-price="169,99"
+                                    data-image="Assets/produtos/produto48.1.jpeg"
+                                    data-description="Uma saída de banho Luana, perfeita para ocasiões especiais."
+                                    data-category="SAÍDA DE BANHO">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Saída Luana" data-price="169.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 50 -->
+                     <article class="product-card" data-category="maiôs" data-name="Maiô preto feminino">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto49.jpeg" alt="Maiô preto feminino">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">MAIÔS</p>
+                            <h3>Maiô Francisca</h3>
+                            <p class="product-price">R$179,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Maiô Francisca"
+                                    data-price="179,99"
+                                    data-image="Assets/produtos/produto49.1.jpeg"
+                                    data-description="Um maiô Francisca, perfeito para ocasiões especiais."
+                                    data-category="MAIÔ">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Maiô Francisca" data-price="179.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 51 -->
+                     <article class="product-card" data-category="biquínis" data-name="Biquíni preto e branco feminino">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto50.jpeg" alt="Biquíni preto e branco feminino">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">BIQUÍNIS</p>
+                            <h3>Biquíni Juliana</h3>
+                            <p class="product-price">R$149,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Biquíni Juliana"
+                                    data-price="149,99"
+                                    data-image="Assets/produtos/produto50.1.jpeg"
+                                    data-description="Um biquíni Juliana, perfeito para ocasiões especiais."
+                                    data-category="BIQUÍNIS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Biquíni Juliana" data-price="149.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 52 -->
+                     <article class="product-card" data-category="saída de banho" data-name="Saída de Banho preto e branco feminino">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto51.jpeg" alt="Saída de Banho preto e branco feminino">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">SAÍDA DE BANHO</p>
+                            <h3>Saída Mariana</h3>
+                            <p class="product-price">R$149,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Saída Mariana"
+                                    data-price="149,99"
+                                    data-image="Assets/produtos/produto51.1.jpeg"
+                                    data-description="Uma saída de banho Mariana, perfeita para ocasiões especiais."
+                                    data-category="SAÍDA DE BANHO">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Saída Mariana" data-price="149.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 53 -->
+                     <article class="product-card" data-category="maiôs" data-name="Maiô feminino preto e branco">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto52.jpeg" alt="Maiô feminino preto e branco">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">MAIÔS</p>
+                            <h3>Maiô Mariana</h3>
+                            <p class="product-price">R$189,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Maiô Mariana"
+                                    data-price="189,99"
+                                    data-image="Assets/produtos/produto52.1.jpeg"
+                                    data-description="Um maiô Mariana, perfeito para ocasiões especiais."
+                                    data-category="MAIÔS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Maiô Mariana" data-price="189.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 54 -->
+                     <article class="product-card" data-category="saída de banho" data-name="Saída de banho feminina amarelo manteiga">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto53.jpeg" alt="Saída de banho feminina amarelo manteiga">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">SAÍDA DE BANHO</p>
+                            <h3>Saída Camila</h3>
+                            <p class="product-price">R$136,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Saída Camila"
+                                    data-price="189,99"
+                                    data-image="Assets/produtos/produto53.1.jpeg"
+                                    data-description="Uma saída de banho feminina, perfeita para ocasiões especiais."
+                                    data-category="SAÍDA DE BANHO">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Saída Camila" data-price="189.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 55 -->
+                     <article class="product-card" data-category="saída de banho" data-name="Saída de banho feminina preto e branco">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto54.jpeg" alt="Saída de banho feminina preto e branco">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">SAÍDA DE BANHO</p>
+                            <h3>Saída Luciana</h3>
+                            <p class="product-price">R$289,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Saída Luciana"
+                                    data-price="289,99"
+                                    data-image="Assets/produtos/produto54.1.jpeg"
+                                    data-description="Uma saída de banho feminina, perfeita para ocasiões especiais."
+                                    data-category="SAÍDA DE BANHO">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Saída Luciana" data-price="289.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 56 -->
+                     <article class="product-card" data-category="saída de banho" data-name="Saída de banho feminina branco">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto55.jpeg" alt="Saída de banho feminina branco">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">SAÍDA DE BANHO</p>
+                            <h3>Saída Lara</h3>
+                            <p class="product-price">R$89,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Saída Lara"
+                                    data-price="89,99"
+                                    data-image="Assets/produtos/produto55.1.jpeg"
+                                    data-description="Uma saída de banho feminina, perfeita para ocasiões especiais."
+                                    data-category="SAÍDA DE BANHO">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Saída Lara" data-price="89.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                      <!-- PRODUTO 57 -->
+                      <article class="product-card" data-category="saída de banho" data-name="Saída de banho feminina calça branca crochê">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto56.jpeg" alt="Saída de banho feminina calça branca crochê">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">SAÍDA DE BANHO</p>
+                            <h3>Saída Mara</h3>
+                            <p class="product-price">R$279,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Saída Mara"
+                                    data-price="279,99"
+                                    data-image="Assets/produtos/produto56.1.jpeg"
+                                    data-description="Uma saída de banho feminina, perfeita para ocasiões especiais."
+                                    data-category="SAÍDA DE BANHO">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Saída Mara" data-price="279.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                      <!-- PRODUTO 58 -->
+                      <article class="product-card" data-category="saída de banho" data-name="Saída de banho feminina calça branca">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto57.jpeg" alt="Saída de banho feminina calça branca">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">SAÍDA DE BANHO</p>
+                            <h3>Saída Rita</h3>
+                            <p class="product-price">R$289,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Saída Rita"
+                                    data-price="289,99"
+                                    data-image="Assets/produtos/produto57.1.jpeg"
+                                    data-description="Uma saída de banho feminina, perfeita para ocasiões especiais."
+                                    data-category="SAÍDA DE BANHO">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Saída Rita" data-price="289.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 59 -->
+                      <article class="product-card" data-category="academia" data-name="roupa de academia">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto58.jpeg" alt="Roupa de academia">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">ACADEMIA</p>
+                            <h3>Conjunto Move</h3>
+                            <p class="product-price">R$189,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Conjunto Move"
+                                    data-price="189,99"
+                                    data-image="Assets/produtos/produto58.1.jpeg"
+                                    data-description="Uma roupa de academia, perfeita para atividades físicas."
+                                    data-category="ACADEMIA">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Conjunto Move" data-price="189.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 60 -->
+                      <article class="product-card" data-category="academia" data-name="roupa de academia">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto59.jpeg" alt="Roupa de academia">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">ACADEMIA</p>
+                            <h3>Conjunto Power</h3>
+                            <p class="product-price">R$289,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Conjunto Power"
+                                    data-price="289,99"
+                                    data-image="Assets/produtos/produto59.1.jpeg"
+                                    data-description="Uma roupa de academia, perfeita para atividades físicas."
+                                    data-category="ACADEMIA">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Conjunto Power" data-price="289.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 61 -->
+                      <article class="product-card" data-category="academia" data-name="roupa de academia">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto60.jpeg" alt="Roupa de academia">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">ACADEMIA</p>
+                            <h3>Conjunto Glow</h3>
+                            <p class="product-price">R$189,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Conjunto Glow"
+                                    data-price="189,99"
+                                    data-image="Assets/produtos/produto60.1.jpeg"
+                                    data-description="Uma roupa de academia, perfeita para atividades físicas."
+                                    data-category="ACADEMIA">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Conjunto Glow" data-price="189.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 62 -->
+                      <article class="product-card" data-category="academia" data-name="roupa de academia">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto61.jpeg" alt="Roupa de academia">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">ACADEMIA</p>
+                            <h3>Conjunto Energy</h3>
+                            <p class="product-price">R$189,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Conjunto Energy"
+                                    data-price="189,99"
+                                    data-image="Assets/produtos/produto61.1.jpeg"
+                                    data-description="Uma roupa de academia, perfeita para atividades físicas."
+                                    data-category="ACADEMIA">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Conjunto Energy" data-price="189.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 63 -->
+                      <article class="product-card" data-category="academia" data-name="roupa de academia">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto62.jpeg" alt="Roupa de academia">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">ACADEMIA</p>
+                            <h3>Conjunto Fit</h3>
+                            <p class="product-price">R$289,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Conjunto Fit"
+                                    data-price="289,99"
+                                    data-image="Assets/produtos/produto62.1.jpeg"
+                                    data-description="Uma roupa de academia, perfeita para atividades físicas."
+                                    data-category="ACADEMIA">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Conjunto Fit" data-price="289.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 64 -->
+                      <article class="product-card" data-category="academia" data-name="roupa de academia">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto63.jpeg" alt="Roupa de academia">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">ACADEMIA</p>
+                            <h3>Conjunto Motion</h3>
+                            <p class="product-price">R$189,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Conjunto Motion"
+                                    data-price="189,99"
+                                    data-image="Assets/produtos/produto63.1.jpeg"
+                                    data-description="Uma roupa de academia, perfeita para atividades físicas."
+                                    data-category="ACADEMIA">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Conjunto Motion" data-price="189.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 65 -->
+                      <article class="product-card" data-category="academia" data-name="roupa de academia">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto64.jpeg" alt="Roupa de academia">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">ACADEMIA</p>
+                            <h3>Conjunto Active</h3>
+                            <p class="product-price">R$189,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Conjunto Active"
+                                    data-price="189,99"
+                                    data-image="Assets/produtos/produto64.1.jpeg"
+                                    data-description="Uma roupa de academia, perfeita para atividades físicas."
+                                    data-category="ACADEMIA">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Conjunto Active" data-price="189.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 66 -->
+                      <article class="product-card" data-category="academia" data-name="roupa de academia">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto65.jpeg" alt="Roupa de academia">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">ACADEMIA</p>
+                            <h3>Conjunto Shape</h3>
+                            <p class="product-price">R$189,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Conjunto Shape"
+                                    data-price="189,99"
+                                    data-image="Assets/produtos/produto65.1.jpeg"
+                                    data-description="Uma roupa de academia, perfeita para atividades físicas."
+                                    data-category="ACADEMIA">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Conjunto Shape" data-price="189.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                     <!-- PRODUTO 67 -->
+                      <article class="product-card" data-category="conjuntos" data-name="conjunto feminino amarelo manteiga">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto66.jpeg" alt="conjunto feminino amarelo manteiga">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">CONJUNTOS</p>
+                            <h3>Conjunto Santorini</h3>
+                            <p class="product-price">R$299,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Conjunto Santorini"
+                                    data-price="299,99"
+                                    data-image="Assets/produtos/produto66.1.jpeg"
+                                    data-description="Um conjunto elegante, versátil e cheio de charme, perfeito para compor looks sofisticados em qualquer ocasião."
+                                    data-category="CONJUNTOS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Conjunto Santorini" data-price="299.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                      <!-- PRODUTO 68 -->
+                      <article class="product-card" data-category="conjuntos" data-name="conjunto feminino elegante">
+                        <div class="product-image">
+                            <img src="Assets/produtos/produto67.jpeg" alt="conjunto feminino elegante">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">CONJUNTOS</p>
+                            <h3>Conjunto Milão</h3>
+                            <p class="product-price">R$699,99</p>
+                            <div class="product-actions">
+                                <button 
+                                    class="details-btn"
+                                    data-name="Conjunto Milão"
+                                    data-price="699,99"
+                                    data-image="Assets/produtos/produto67.1.jpeg"
+                                    data-description="Um conjunto elegante, versátil e cheio de charme, perfeito para compor looks sofisticados em qualquer ocasião."
+                                    data-category="CONJUNTOS">
+                                    VER DETALHES
+                                </button>
+                                <button class="add-cart" data-name="Conjunto Milão" data-price="699.99">
+                                    ADICIONAR À SACOLA
+                                </button>
+                            </div>
+                        </div>
+                     </article>
+                </div>
+                <!-- PAGINAÇÃO -->
+                 <div id="pagination" class="pagination"></div>
+            </section>
+
+            
+            <section id="newsletter">
+                <span class="newsletter-subtitle">FIQUE POR DENTRO</span>
+
+                    <h2>Novidades da Casa Lolí</h2>
+
+                    <p>
+                        Cadastre seu e-mail para acompanhar lançamentos e novidades.
+                    </p>
+
+                    <form action="#" method="post">
+                    <input
+                    type="email"
+                    id="newsletter-email"
+                    name="email"
+                    placeholder="Seu melhor e-mail"
+                    required
+                    />
+
+                    <button type="submit">CADASTRAR</button>
+                    </form>
+            </section>
+
+
+        <footer>
+
+            <h2>Casa Lolí</h2>
+
+            <p>Elegância em cada detalhe.</p>
+
+            <p>&copy; 2026 Casa Lolí - Todos os direitos reservados.</p>
+
+        </footer>
+
+        <!-- JANELA DE DETALHES DO PRODUTO -->
+        <div class="details-overlay" id="details-overlay">
+
+            <div class="details-modal">
+
+                <button class="close-details" id="close-details">
+                    &times;
+                </button>
+
+                <p class="eyebrow">CASA LOLÍ</p>
+
+                    <h2 id="details-name">Nome do produto</h2>
+
+                <p id="details-description">
+                    Conheça os detalhes desta peça.
+                </p>
+
+                <p class="details-price" id="details-price"></p>
+
+                
+
+                <button class="add-cart details-add-cart"
+                    id="details-add-cart">
+                    ADICIONAR À SACOLA
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- JANELA DE DETALHES DO PRODUTO -->
+        <div class="modal-backdrop" id="product-modal">
+
+            <div class="product-modal">
+
+                <button class="close-modal" id="close-product-modal">
+                    &times;
+                </button>
+
+                <div class="modal-image">
+                    <img id="modal-image" src="" alt="Foto do produto">
+                    <div class="image-indicators" id="image-indicators">
+                        <span class="active"></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="modal-info">
+
+                    <p class="product-category" id="modal-category">
+                        CASA LOLÍ
+                    </p>
+
+                    <h2 id="modal-name">Nome do produto</h2>
+
+                    <p id="modal-description">
+                        Descrição do produto.
+                    </p>
+
+                    <h3 id="modal-price">R$ 0,00</h3>
+
+                    <label for="modal-size">Selecione seu tamanho:</label>
+
+                    <select id="modal-size">
+                        <option value="">Escolha um tamanho</option>
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="GG">GG</option>
+                    </select>
+
+                    <button id="modal-add-cart">
+                        ADICIONAR À SACOLA
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+            <!-- JANELA DA SACOLA -->
+            <div id="cart-overlay" class="cart-overlay">
+                <div class="cart-modal">
+
+                    <div class="cart-header">
+                        <h2>Minha Sacola</h2>
+                        <button id="close-cart" class="close-cart">&times;</button>
+                    </div>
+
+                    <div id="cart-items" class="cart-items">
+                        <!-- Os produtos serão inseridos pelo JavaScript -->
+                    </div>
+
+                    <div class="cart-footer">
+                        <div class="cart-total">
+                            <span>Total</span>
+                            <strong id="cart-total">R$ 0,00</strong>
+                        </div>
+
+                        <button id="checkout-button" class="checkout-button">
+                            FINALIZAR COMPRA
+                        </button>
+
+                        <button id="continue-shopping" class="continue-shopping">
+                            CONTINUAR COMPRANDO
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        <script src="script.js"></script>
+
+    </body>
+
+</html>
