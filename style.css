@@ -1102,19 +1102,6 @@ footer p {
     gap: 15px;
 }
 
-.profile-button {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    background: transparent;
-    border: 1px solid #49372C;
-    padding: 10px 18px;
-    color: #49372C;
-    cursor: pointer;
-    font-size: 12px;
-    transition: 0.3s;
-}
-
 .profile-button:hover {
     background-color: #49372C;
     color: #fff;
@@ -1358,6 +1345,186 @@ footer p {
         padding: 20px;
     }
 }
+
+
+/* BOTÕES DO CABEÇALHO */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-button {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    line-height: 1;
+
+    background: transparent;
+    border: 1px solid #49372C;
+    color: #49372C;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.profile-button:hover {
+    background: #49372C;
+    color: #F8F5EF;
+}
+
+/* JANELA DO PERFIL */
+
+.profile-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 20, 15, 0.55);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.profile-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.profile-modal {
+    position: relative;
+    background: #F8F5EF;
+    width: 100%;
+    max-width: 440px;
+    padding: 40px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-profile {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    border: none;
+    background: transparent;
+    color: #49372C;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.profile-modal h2 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profile-subtitle {
+    text-align: center;
+    font-size: 13px;
+    color: #78695C;
+    margin-bottom: 25px;
+}
+
+.profile-tabs {
+    display: flex;
+    border-bottom: 1px solid #D5BDA5;
+    margin-bottom: 25px;
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    color: #78695C;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.auth-tab.active {
+    color: #49372C;
+    border-bottom-color: #49372C;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-form label {
+    font-size: 13px;
+    color: #49372C;
+    margin-top: 8px;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #D5BDA5;
+    background: #FFFFFF;
+    color: #49372C;
+    outline: none;
+}
+
+.auth-form input:focus {
+    border-color: #80634D;
+}
+
+.auth-submit {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    background: #49372C;
+    color: #FFFFFF;
+    border: 1px solid #49372C;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-submit:hover {
+    background: #80634D;
+}
+
+.auth-message {
+    font-size: 12px;
+    color: #A34D3F;
+    min-height: 16px;
+}
+
+.profile-modal [hidden] {
+    display: none !important;
+}
+
+#account-view {
+    text-align: center;
+}
+
+#account-view p {
+    margin: 15px 0;
+    color: #78695C;
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    .profile-modal {
+        padding: 35px 22px;
+    }
+}
+
 
 
 

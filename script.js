@@ -550,3 +550,277 @@ document.addEventListener("keydown", (event) => {
 });
 
 
+// PERFIL, LOGIN E CADASTRO
+
+const profileButton = document.getElementById("open-profile");
+const profileOverlay = document.getElementById("profile-overlay");
+const closeProfile = document.getElementById("close-profile");
+
+const authView = document.getElementById("auth-view");
+const accountView = document.getElementById("account-view");
+
+const loginForm = document.getElementById("login-form");
+const registerForm = document.getElementById("register-form");
+
+const authTabs = document.querySelectorAll(".auth-tab");
+
+const loginMessage = document.getElementById("login-message");
+const registerMessage = document.getElementById("register-message");
+
+const accountName = document.getElementById("account-name");
+const accountEmail = document.getElementById("account-email");
+
+const logoutButton = document.getElementById("logout-button");
+
+const ACCOUNT_KEY = "casaLoliAccounts";
+const SESSION_KEY = "casaLoliSession";
+
+// Armazenamento das contas de demonstração
+
+function getAccounts() {
+    try {
+        return JSON.parse(localStorage.getItem(ACCOUNT_KEY)) || [];
+    } catch {
+        return [];
+    }
+}
+
+// Gerar hash da senha para a demonstração
+
+async function hashPassword(password, salt) {
+    const encoder = new TextEncoder();
+
+    const key = await crypto.subtle.importKey(
+        "raw",
+        encoder.encode(password),
+        "PBKDF2",
+        false,
+        ["deriveBits"]
+    );
+
+    const result = await crypto.subtle.deriveBits(
+        {
+            name: "PBKDF2",
+            salt: encoder.encode(salt),
+            iterations: 120000,
+            hash: "SHA-256"
+        },
+        key,
+        256
+    );
+
+    return Array.from(new Uint8Array(result))
+        .map(byte => byte.toString(16).padStart(2, "0"))
+        .join("");
+}
+
+// Mostrar a área do usuário
+
+function showAccount(user) {
+    authView.hidden = true;
+    accountView.hidden = false;
+
+    accountName.textContent = user.name;
+    accountEmail.textContent = user.email;
+}
+
+// Mostrar os formulários
+
+function showAuth(tab = "login") {
+    authView.hidden = false;
+    accountView.hidden = true;
+
+    loginForm.hidden = tab !== "login";
+    registerForm.hidden = tab !== "register";
+
+    authTabs.forEach(button => {
+        button.classList.toggle(
+            "active",
+            button.dataset.tab === tab
+        );
+    });
+}
+
+// Alternar entre login e cadastro
+
+authTabs.forEach(button => {
+    button.addEventListener("click", () => {
+        loginMessage.textContent = "";
+        registerMessage.textContent = "";
+
+        showAuth(button.dataset.tab);
+    });
+});
+
+// Verificar sessão
+
+function getCurrentUser() {
+    const session = sessionStorage.getItem(SESSION_KEY);
+
+    if (!session) return null;
+
+    try {
+        const { email } = JSON.parse(session);
+        return getAccounts().find(user => user.email === email) || null;
+    } catch {
+        return null;
+    }
+}
+
+// Abrir perfil
+
+profileButton.addEventListener("click", () => {
+    profileOverlay.classList.add("show");
+    document.body.style.overflow = "hidden";
+
+    const user = getCurrentUser();
+
+    if (user) {
+        showAccount(user);
+    } else {
+        showAuth("login");
+    }
+});
+
+// Fechar perfil
+
+function closeProfileModal() {
+    profileOverlay.classList.remove("show");
+    document.body.style.overflow = "";
+}
+
+closeProfile.addEventListener("click", closeProfileModal);
+
+profileOverlay.addEventListener("click", event => {
+    if (event.target === profileOverlay) {
+        closeProfileModal();
+    }
+});
+
+// CADASTRO
+
+registerForm.addEventListener("submit", async event => {
+    event.preventDefault();
+
+    registerMessage.textContent = "";
+
+    const name = document.getElementById("register-name").value.trim();
+    const email = document.getElementById("register-email").value.trim().toLowerCase();
+    const password = document.getElementById("register-password").value;
+    const confirmation = document.getElementById("confirm-password").value;
+
+    if (name.length < 3) {
+        registerMessage.textContent = "Digite seu nome completo.";
+        return;
+    }
+
+    if (password.length < 8) {
+        registerMessage.textContent = "A senha precisa ter pelo menos 8 caracteres.";
+        return;
+    }
+
+    if (password !== confirmation) {
+        registerMessage.textContent = "As senhas não coincidem.";
+        return;
+    }
+
+    if (!crypto.subtle) {
+        registerMessage.textContent = "Recurso de segurança indisponível neste navegador.";
+        return;
+    }
+
+    const accounts = getAccounts();
+
+    if (accounts.some(user => user.email === email)) {
+        registerMessage.textContent = "Este e-mail já possui cadastro.";
+        return;
+    }
+
+    try {
+        const salt = crypto.getRandomValues(new Uint8Array(16));
+
+        const saltString = Array.from(salt)
+            .map(byte => byte.toString(16).padStart(2, "0"))
+            .join("");
+
+        const passwordHash = await hashPassword(password, saltString);
+
+        const newUser = {
+            name,
+            email,
+            salt: saltString,
+            passwordHash
+        };
+
+        accounts.push(newUser);
+
+        localStorage.setItem(ACCOUNT_KEY, JSON.stringify(accounts));
+
+        sessionStorage.setItem(
+            SESSION_KEY,
+            JSON.stringify({ email })
+        );
+
+        registerForm.reset();
+        showAccount(newUser);
+
+    } catch {
+        registerMessage.textContent = "Não foi possível criar a conta. Tente novamente.";
+    }
+});
+
+// LOGIN
+
+loginForm.addEventListener("submit", async event => {
+    event.preventDefault();
+
+    loginMessage.textContent = "";
+
+    const email = document.getElementById("login-email").value.trim().toLowerCase();
+    const password = document.getElementById("login-password").value;
+
+    const user = getAccounts().find(item => item.email === email);
+
+    if (!user) {
+        loginMessage.textContent = "E-mail ou senha incorretos.";
+        return;
+    }
+
+    try {
+        const passwordHash = await hashPassword(password, user.salt);
+
+        if (passwordHash !== user.passwordHash) {
+            loginMessage.textContent = "E-mail ou senha incorretos.";
+            return;
+        }
+
+        sessionStorage.setItem(
+            SESSION_KEY,
+            JSON.stringify({ email })
+        );
+
+        loginForm.reset();
+        showAccount(user);
+
+    } catch {
+        loginMessage.textContent = "Não foi possível entrar. Tente novamente.";
+    }
+});
+
+// SAIR DA CONTA
+
+logoutButton.addEventListener("click", () => {
+    sessionStorage.removeItem(SESSION_KEY);
+    showAuth("login");
+});
+
+// FECHAR COM ESC
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        closeProfileModal();
+    }
+});
+
+
+

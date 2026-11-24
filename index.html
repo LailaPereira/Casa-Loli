@@ -29,7 +29,16 @@
             <div class="header-actions">
 
                 <button class="profile-button" id="open-profile" aria-label="Perfil">
-                    ♙
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor"
+                        stroke-width="1.6" stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <circle cx="12" cy="8" r="4"/>
+                        <path d="M5 21v-2a7 7 0 0 1 14 0v2"/>
+
+                    </svg>
                 </button>
 
                 <button class="cart-button" id="open-cart" aria-label="Abrir sacola">
@@ -1998,6 +2007,102 @@
 
                 </div>
             </div>
+
+
+            <!-- JANELA DO PERFIL -->
+            <div id="profile-overlay" class="profile-overlay">
+
+                <div class="profile-modal">
+
+                        <button id="close-profile" class="close-profile">
+                            &times;
+                        </button>
+
+                    <div id="auth-view">
+
+                        <h2 id="profile-title">Bem-vinda à Casa Lolí</h2>
+                        <p class="profile-subtitle">
+                            Entre na sua conta ou crie seu cadastro.
+                        </p>
+
+                            <div class="profile-tabs">
+                                <button class="auth-tab active" data-tab="login">
+                                    Entrar
+                                </button>
+
+                                <button class="auth-tab" data-tab="register">
+                                    Criar conta
+                                </button>
+                            </div>
+
+                        <!-- LOGIN -->
+                        <form id="login-form" class="auth-form">
+
+                            <label for="login-email">E-mail</label>
+                            <input type="email" id="login-email"
+                            placeholder="Digite seu e-mail" required>
+
+                            <label for="login-password">Senha</label>
+                            <input type="password" id="login-password"
+                            placeholder="Digite sua senha" required>
+
+                            <p id="login-message" class="auth-message"></p>
+
+                            <button type="submit" class="auth-submit">
+                                ENTRAR
+                            </button>
+
+                        </form>
+
+                        <!-- CADASTRO -->
+                        <form id="register-form" class="auth-form" hidden>
+
+                            <label for="register-name">Nome completo</label>
+                            <input type="text" id="register-name"
+                            placeholder="Digite seu nome" minlength="3" required>
+
+                            <label for="register-email">E-mail</label>
+                            <input type="email" id="register-email"
+                            placeholder="Digite seu e-mail" required>
+
+                            <label for="register-password">Senha</label>
+                            <input type="password" id="register-password"
+                            placeholder="Mínimo de 8 caracteres"
+                            minlength="8" required>
+
+                            <label for="confirm-password">Confirmar senha</label>
+                            <input type="password" id="confirm-password"
+                            placeholder="Digite a senha novamente"
+                            minlength="8" required>
+
+                            <p id="register-message" class="auth-message"></p>
+
+                            <button type="submit" class="auth-submit">
+                                CRIAR CONTA
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                        <!-- ÁREA DO USUÁRIO LOGADO -->
+                        <div id="account-view" hidden>
+
+                            <h2>Minha conta</h2>
+
+                            <p>Olá, <strong id="account-name"></strong>!</p>
+                            <p id="account-email"></p>
+
+                            <button id="logout-button" class="auth-submit">
+                                SAIR DA CONTA
+                            </button>
+                        </div>  
+                </div>
+
+            </div>
+
+</div>
+
 
         <script src="script.js"></script>
 
