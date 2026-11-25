@@ -589,6 +589,131 @@ const logoutButton = document.getElementById("logout-button");
 const ACCOUNT_KEY = "casaLoliAccounts";
 const SESSION_KEY = "casaLoliSession";
 
+// MÁSCARAS DOS CAMPOS
+
+function maskCPF(value) {
+    return value
+        .replace(/\D/g, "")
+        .slice(0, 11)
+        .replace(/(\d{3})(\d)/, "$1.$2")
+        .replace(/(\d{3})(\d)/, "$1.$2")
+        .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+}
+
+function maskPhone(value) {
+    const digits = value.replace(/\D/g, "").slice(0, 11);
+
+    if (digits.length <= 10) {
+        return digits
+            .replace(/^(\d{2})(\d)/, "($1) $2")
+            .replace(/(\d{4})(\d)/, "$1-$2");
+    }
+
+    return digits
+        .replace(/^(\d{2})(\d)/, "($1) $2")
+        .replace(/(\d{5})(\d)/, "$1-$2");
+}
+
+function maskCEP(value) {
+    return value
+        .replace(/\D/g, "")
+        .slice(0, 8)
+        .replace(/(\d{5})(\d)/, "$1-$2");
+}
+
+// APLICAR MÁSCARAS AUTOMATICAMENTE
+
+accountCpf.addEventListener("input", () => {
+    accountCpf.value = maskCPF(accountCpf.value);
+});
+
+accountPhone.addEventListener("input", () => {
+    accountPhone.value = maskPhone(accountPhone.value);
+});
+
+accountCep.addEventListener("input", () => {
+    accountCep.value = maskCEP(accountCep.value);
+});
+
+// BUSCAR ENDEREÇO PELO CEP
+
+accountCep.addEventListener("blur", async () => {
+    const cep = accountCep.value.replace(/\D/g, "");
+
+    if (cep.length !== 8) {
+        return;
+    }
+
+    try {
+        accountMessage.textContent = "Consultando CEP...";
+
+        const response = await fetch(
+            `https://viacep.com.br/ws/${cep}/json/`
+        );
+
+        if (!response.ok) {
+            throw new Error("Erro na consulta");
+        }
+
+        const data = await response.json();
+
+        if (data.erro) {
+            accountMessage.textContent = "CEP não encontrado.";
+            return;
+        }
+
+        accountCity.value = data.localidade || "";
+        accountState.value = data.uf || "";
+
+        if (data.logradouro) {
+            accountAddress.value = data.logradouro;
+        }
+
+        accountMessage.textContent =
+            "Endereço localizado com sucesso!";
+
+    } catch (error) {
+        accountMessage.textContent =
+            "Não foi possível consultar o CEP. Tente novamente.";
+    }
+});
+
+// VALIDAR CPF
+
+function isValidCPF(cpf) {
+    const digits = cpf.replace(/\D/g, "");
+
+    if (digits.length !== 11 || /^(\d)\1{10}$/.test(digits)) {
+        return false;
+    }
+
+    let sum = 0;
+
+    for (let i = 0; i < 9; i++) {
+        sum += Number(digits[i]) * (10 - i);
+    }
+
+    let firstDigit = (sum * 10) % 11;
+
+    if (firstDigit === 10) firstDigit = 0;
+
+    if (firstDigit !== Number(digits[9])) {
+        return false;
+    }
+
+    sum = 0;
+
+    for (let i = 0; i < 10; i++) {
+        sum += Number(digits[i]) * (11 - i);
+    }
+
+    let secondDigit = (sum * 10) % 11;
+
+    if (secondDigit === 10) secondDigit = 0;
+
+    return secondDigit === Number(digits[10]);
+}
+
 // Armazenamento das contas de demonstração
 
 function getAccounts() {
@@ -736,6 +861,39 @@ accountForm.addEventListener("submit", (event) => {
         accountMessage.textContent = "Digite seu nome completo.";
         return;
     }
+
+// VALIDAR TELEFONE
+
+const phoneDigits = phone.replace(/\D/g, "");
+
+if (phoneDigits.length !== 10 && phoneDigits.length !== 11) {
+    accountMessage.textContent = "Digite um telefone válido.";
+    return;
+}
+
+// VALIDAR CPF
+
+if (!isValidCPF(cpf)) {
+    accountMessage.textContent = "Digite um CPF válido.";
+    return;
+}
+
+// VALIDAR CEP
+
+const cepDigits = cep.replace(/\D/g, "");
+
+if (cepDigits.length !== 8) {
+    accountMessage.textContent = "Digite um CEP válido.";
+    return;
+}
+
+// VALIDAR CAMPOS OBRIGATÓRIOS
+
+if (!state || !city || !address) {
+    accountMessage.textContent =
+        "Preencha o estado, a cidade e o endereço.";
+    return;
+}
 
     const accounts = getAccounts();
 
