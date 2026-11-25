@@ -38,9 +38,9 @@ O projeto foi desenvolvido como atividade acadêmica, com foco na aplicação pr
 ## 🚧 Próximas etapas
 
 - [ ] Implementar o cadastro e funcionamento da newsletter.
-- [ ] Implementar funcionalidades do perfil do usuário.
-- [ ] Desenvolver sistema de login.
-- [ ] Desenvolver sistema de criação de conta (cadastro).
+- [X] Implementar funcionalidades do perfil do usuário.
+- [X] Desenvolver sistema de login.
+- [X] Desenvolver sistema de criação de conta (cadastro).
 - [ ] Implementar validações dos formulários.
 - [ ] Aprimorar funcionalidades e interações do site.
 - [ ] Realizar testes e ajustes finais de responsividade.
