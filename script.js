@@ -569,6 +569,15 @@ const registerMessage = document.getElementById("register-message");
 
 const accountName = document.getElementById("account-name");
 const accountEmail = document.getElementById("account-email");
+const accountPhone = document.getElementById("account-phone");
+const accountAddress = document.getElementById("account-address");
+
+const accountForm = document.getElementById("account-form");
+const accountMessage = document.getElementById("account-message");
+
+const editAccountButton = document.getElementById("edit-account-button");
+const saveAccountButton = document.getElementById("save-account-button");
+const cancelEditButton = document.getElementById("cancel-edit-button");
 
 const logoutButton = document.getElementById("logout-button");
 
@@ -620,8 +629,14 @@ function showAccount(user) {
     authView.hidden = true;
     accountView.hidden = false;
 
-    accountName.textContent = user.name;
-    accountEmail.textContent = user.email;
+    accountName.value = user.name || "";
+    accountEmail.value = user.email || "";
+    accountPhone.value = user.phone || "";
+    accountAddress.value = user.address || "";
+
+    accountMessage.textContent = "";
+
+    setAccountEditMode(false);
 }
 
 // Mostrar os formulários
@@ -640,6 +655,109 @@ function showAuth(tab = "login") {
         );
     });
 }
+
+// CONTROLAR MODO DE EDIÇÃO
+
+function setAccountEditMode(editing) {
+
+    accountName.readOnly = !editing;
+    accountEmail.readOnly = !editing;
+    accountPhone.readOnly = !editing;
+    accountAddress.readOnly = !editing;
+
+    editAccountButton.hidden = editing;
+    saveAccountButton.hidden = !editing;
+    cancelEditButton.hidden = !editing;
+}
+
+
+// ATIVAR EDIÇÃO
+
+editAccountButton.addEventListener("click", () => {
+
+    accountMessage.textContent = "";
+
+    setAccountEditMode(true);
+
+    accountName.focus();
+
+});
+
+
+// CANCELAR EDIÇÃO
+
+cancelEditButton.addEventListener("click", () => {
+
+    const user = getCurrentUser();
+
+    if (user) {
+        showAccount(user);
+    }
+
+});
+
+
+// SALVAR ALTERAÇÕES
+
+accountForm.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+    const currentUser = getCurrentUser();
+
+    if (!currentUser) return;
+
+    const name = accountName.value.trim();
+    const email = accountEmail.value.trim().toLowerCase();
+    const phone = accountPhone.value.trim();
+    const address = accountAddress.value.trim();
+
+    if (name.length < 3) {
+        accountMessage.textContent = "Digite seu nome completo.";
+        return;
+    }
+
+    const accounts = getAccounts();
+
+    const emailExists = accounts.some(user =>
+        user.email === email && user.email !== currentUser.email
+    );
+
+    if (emailExists) {
+        accountMessage.textContent = "Este e-mail já está cadastrado.";
+        return;
+    }
+
+    const userIndex = accounts.findIndex(user =>
+        user.email === currentUser.email
+    );
+
+    if (userIndex === -1) return;
+
+    const updatedUser = {
+        ...accounts[userIndex],
+        name,
+        email,
+        phone,
+        address
+    };
+
+    accounts[userIndex] = updatedUser;
+
+    localStorage.setItem(ACCOUNT_KEY, JSON.stringify(accounts));
+
+    // Atualizar sessão caso o e-mail tenha mudado
+
+    sessionStorage.setItem(
+        SESSION_KEY,
+        JSON.stringify({ email })
+    );
+
+    showAccount(updatedUser);
+
+    accountMessage.textContent = "Dados atualizados com sucesso!";
+
+});
 
 // Alternar entre login e cadastro
 

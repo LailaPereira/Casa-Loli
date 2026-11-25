@@ -2090,12 +2090,42 @@
 
                             <h2>Minha conta</h2>
 
-                            <p>Olá, <strong id="account-name"></strong>!</p>
-                            <p id="account-email"></p>
+                            <p class="profile-subtitle">
+                                Consulte e atualize seus dados pessoais.
+                            </p>
 
-                            <button id="logout-button" class="auth-submit">
-                                SAIR DA CONTA
-                            </button>
+                            <form id="account-form" class="auth-form">
+                                <label for="account-name">Nome completo</label>
+                                <input type="text" id="account-name" required readonly>
+
+                                <label for="account-email">E-mail</label>
+                                <input type="email" id="account-email" required readonly>
+
+                                <label for="account-phone">Telefone</label>
+                                <input type="tel" id="account-phone" placeholder="Seu telefone" readonly>
+
+                                <label for="account-address">Endereço</label>
+                                <input type="text" id="account-address" placeholder="Seu endereço" readonly>
+
+                                <p id="account-message" class="auth-message"></p>
+
+                                <button type="button" id="edit-account-button" class="auth-submit">
+                                    EDITAR DADOS
+                                </button>
+
+                                <button type="submit" id="save-account-button" class="auth-submit" hidden>
+                                    SALVAR ALTERAÇÕES
+                                </button>
+
+                                <button type="button" id="cancel-edit-button" class="auth-submit" hidden>
+                                    CANCELAR
+                                </button>
+
+                                 <button type="button" id="logout-button" class="auth-submit">
+                                    SAIR DA CONTA
+                                </button>
+
+                            </form>
                         </div>  
                 </div>
 
