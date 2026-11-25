@@ -1469,19 +1469,31 @@ footer p {
     font-size: 13px;
     color: #49372C;
     margin-top: 8px;
+    text-align: left;
 }
 
-.auth-form input {
+.auth-form input,
+.auth-form select {
     width: 100%;
+    box-sizing: border-box;
     padding: 13px;
     border: 1px solid #D5BDA5;
     background: #FFFFFF;
     color: #49372C;
     outline: none;
+    text-align: left;
+    font-family: inherit;
+    font-size: 13px;
 }
 
-.auth-form input:focus {
+.auth-form input:focus,
+.auth-form select:focus {
     border-color: #80634D;
+}
+
+.auth-form select:disabled {
+    opacity: 1;
+    cursor: default;
 }
 
 .auth-submit {
