@@ -570,7 +570,12 @@ const registerMessage = document.getElementById("register-message");
 const accountName = document.getElementById("account-name");
 const accountEmail = document.getElementById("account-email");
 const accountPhone = document.getElementById("account-phone");
+const accountCpf = document.getElementById("account-cpf");
+const accountCep = document.getElementById("account-cep");
+const accountState = document.getElementById("account-state");
+const accountCity = document.getElementById("account-city");
 const accountAddress = document.getElementById("account-address");
+const accountComplement = document.getElementById("account-complement");
 
 const accountForm = document.getElementById("account-form");
 const accountMessage = document.getElementById("account-message");
@@ -632,7 +637,12 @@ function showAccount(user) {
     accountName.value = user.name || "";
     accountEmail.value = user.email || "";
     accountPhone.value = user.phone || "";
+    accountCpf.value = user.cpf || "";
+    accountCep.value = user.cep || "";
+    accountState.value = user.state || "";
+    accountCity.value = user.city || "";
     accountAddress.value = user.address || "";
+    accountComplement.value = user.complement || "";
 
     accountMessage.textContent = "";
 
@@ -663,7 +673,12 @@ function setAccountEditMode(editing) {
     accountName.readOnly = !editing;
     accountEmail.readOnly = !editing;
     accountPhone.readOnly = !editing;
+    accountCpf.readOnly = !editing;
+    accountCep.readOnly = !editing;
+    accountState.disabled = !editing;
+    accountCity.readOnly = !editing;
     accountAddress.readOnly = !editing;
+    accountComplement.readOnly = !editing;
 
     editAccountButton.hidden = editing;
     saveAccountButton.hidden = !editing;
@@ -710,7 +725,12 @@ accountForm.addEventListener("submit", (event) => {
     const name = accountName.value.trim();
     const email = accountEmail.value.trim().toLowerCase();
     const phone = accountPhone.value.trim();
+    const cpf = accountCpf.value.trim();
+    const cep = accountCep.value.trim();
+    const state = accountState.value;
+    const city = accountCity.value.trim();
     const address = accountAddress.value.trim();
+    const complement = accountComplement.value.trim();
 
     if (name.length < 3) {
         accountMessage.textContent = "Digite seu nome completo.";
@@ -739,7 +759,12 @@ accountForm.addEventListener("submit", (event) => {
         name,
         email,
         phone,
-        address
+        cpf,
+        cep,
+        state,
+        city,
+        address,
+        complement
     };
 
     accounts[userIndex] = updatedUser;
